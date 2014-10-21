@@ -1,0 +1,108 @@
+query1.0:  of 2|that 1|volcano 1|ancient 1|destroyed 1|Give 1|name 1|us 1|the 3|Pompeii 1|city 1|
+0.  rel=0  of 2|destroyed 1|the 2|city 1|
+1.  rel=1  the 1|city 1|of 1|
+2.  rel=0  the 1|of 1|
+3.  rel=0  city 1|of 1|ancient 1|
+
+query2.0:  to 1|see 1|Jordan 1|What 1|come 1|the 1|crowd 1|has 1|been 1|ever 1|Michael 1|largest 1|
+0.  rel=0  the 1|Michael 1|largest 1|Jordan 1|crowd 1|
+1.  rel=1  to 3|the 2|Michael 1|see 1|
+2.  rel=0  to 1|the 2|
+3.  rel=0  the 2|Michael 1|largest 1|
+
+query3.0:  of 1|In 1|which 1|a 1|did 1|year 1|purchase 1|Alaska 1|happen? 1|
+0.  rel=0  of 1|a 1|purchase 1|Alaska 1|
+1.  rel=0  purchase 1|of 1|Alaska 1|
+2.  rel=1  Alaska 1|year 1|
+
+query4.0:  Chamberlain 1|points? 1|What 1|score 1|did 1|year 1|Wilt 1|100 1|
+0.  rel=0  Chamberlain 1|100 1|Wilt 1|
+1.  rel=1  Chamberlain 1|100 1|Wilt 1|
+2.  rel=0  Chamberlain 1|100 1|Wilt 1|
+
+query5.0:  is 1|China's 1|Sorrow? 1|What 1|called 1|river 1|
+0.  rel=0  is 1|called 1|river 1|
+1.  rel=0  is 1|river 1|
+2.  rel=1  
+
+query6.0:  to 1|person 1|minutes 1|Who 1|than 1|mile 1|the 2|four 1|run 1|first 1|in 1|less 1|was 1|
+0.  rel=0  to 1|minutes 1|the 1|run 1|in 1|than 1|mile 1|four 1|
+1.  rel=1  to 1|mile 1|the 2|first 1|was 1|
+2.  rel=0  to 1|was 2|mile 1|in 1|
+
+query7.0:  become 1|a 1|What 1|did 1|year 1|Alaska 1|state? 1|
+0.  rel=0  did 1|Alaska 1|
+1.  rel=0  a 1|
+2.  rel=1  Alaska 1|
+3.  rel=0  
+
+query8.0:  Tyson 1|bite 1|did 1|ear? 1|Mike 1|Holyfield's 1|When 1|
+0.  rel=0  Tyson 1|Holyfield's 1|
+1.  rel=1  Tyson 1|Holyfield's 1|
+2.  rel=0  Tyson 1|
+3.  rel=0  Tyson 1|
+
+query9.0:  moon 1|spaceship 1|What 1|on 1|the 2|first 1|was 1|
+0.  rel=0  moon 1|the 3|first 1|was 1|
+1.  rel=1  the 3|first 1|was 1|
+2.  rel=0  the 2|was 1|on 2|
+3.  rel=0  the 3|
+
+query10.0:  Who 1|Prize 1|won 1|the 1|1992? 1|Nobel 1|Peace 1|in 1|
+0.  rel=1  won 1|the 1|Nobel 1|in 1|
+1.  rel=0  the 1|Nobel 1|in 1|Peace 1|
+2.  rel=0  Nobel 1|in 1|
+3.  rel=0  the 1|
+
+query11.0:  Where 1|is 1|Devil's 1|Tower 1|
+0.  rel=0  is 1|Devil's 1|Tower 1|
+1.  rel=0  is 1|Devil's 1|Tower 1|
+2.  rel=0  Devil's 1|Tower 1|
+3.  rel=1  Tower 1|
+
+query12.0:  of 1|is 1|height 1|redwood? 1|What 1|the 2|tallest 1|
+0.  rel=0  is 1|the 2|tallest 1|
+1.  rel=0  the 2|tallest 1|
+2.  rel=1  the 2|
+3.  rel=0  is 1|the 1|tallest 1|
+
+query13.0:  is 1|Crater 1|Lake? 1|How 1|deep 1|
+0.  rel=0  is 1|Crater 1|
+1.  rel=0  Crater 1|
+2.  rel=1  Crater 1|
+
+query14.0:  Who 1|for 1|Commodores 1|lead 1|singer 1|the 2|was 1|
+0.  rel=0  Commodores 1|the 2|
+1.  rel=1  for 1|lead 1|singer 1|was 1|
+2.  rel=0  the 1|was 1|Commodores 1|
+
+query15.0:  is 1|What 1|on 1|the 1|coldest 1|earth? 1|place 1|
+0.  rel=0  is 1|the 1|coldest 1|place 1|
+1.  rel=0  is 1|the 1|coldest 1|place 1|
+2.  rel=1  coldest 1|
+
+query16.0:  Bob 1|die 1|did 1|Marley 1|When 1|
+0.  rel=0  Marley 1|did 1|Bob 1|
+1.  rel=0  Marley 1|Bob 1|die 1|
+2.  rel=1  Bob 1|Marley 1|
+
+query17.0:  Which 1|is 1|U.S. 1|leading 1|state 1|the 1|corn 1|producer? 1|
+0.  rel=0  is 1|leading 1|the 1|corn 1|
+1.  rel=0  state 1|corn 1|U.S. 1|leading 1|
+2.  rel=1  is 1|the 1|
+
+query18.0:  Where 1|McDonald's 1|built? 1|the 1|first 1|was 1|
+0.  rel=0  McDonald's 1|the 1|
+1.  rel=1  the 4|
+2.  rel=0  
+
+query19.0:  disaster 1|The 1|which 1|Hindenburg 1|Jersey 1|1937 1|took 1|New 1|town? 1|place 1|in 2|
+0.  rel=0  took 1|The 1|place 1|Hindenburg 2|disaster 1|
+1.  rel=0  1937 1|in 1|disaster 1|which 1|
+2.  rel=1  Hindenburg 1|in 1|
+
+query20.0:  Keystone 1|is 1|What 1|State? 1|the 1|
+0.  rel=0  Keystone 2|is 1|the 1|
+1.  rel=1  is 1|the 1|Keystone 1|
+2.  rel=0  is 1|
+

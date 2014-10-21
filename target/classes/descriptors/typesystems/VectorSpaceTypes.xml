@@ -31,7 +31,7 @@
         <featureDescription>
           <name>frequency</name>
           <description/>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

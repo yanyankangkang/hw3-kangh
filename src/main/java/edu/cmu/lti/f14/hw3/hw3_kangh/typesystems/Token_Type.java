@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Mon Oct 13 01:38:25 EDT 2014
+ * Updated by JCasGen Wed Oct 15 13:50:29 EDT 2014
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */
@@ -67,19 +67,19 @@ public class Token_Type extends Annotation_Type {
   /** @generated */
   final int     casFeatCode_frequency;
   /** @generated */ 
-  public double getFrequency(int addr) {
+  public int getFrequency(int addr) {
         if (featOkTst && casFeat_frequency == null)
       jcas.throwFeatMissing("frequency", "edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Token");
-    return ll_cas.ll_getDoubleValue(addr, casFeatCode_frequency);
+    return ll_cas.ll_getIntValue(addr, casFeatCode_frequency);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setFrequency(int addr, double v) {
+  public void setFrequency(int addr, int v) {
         if (featOkTst && casFeat_frequency == null)
       jcas.throwFeatMissing("frequency", "edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Token");
-    ll_cas.ll_setDoubleValue(addr, casFeatCode_frequency, v);}
+    ll_cas.ll_setIntValue(addr, casFeatCode_frequency, v);}
     
   
 
@@ -96,7 +96,7 @@ public class Token_Type extends Annotation_Type {
     casFeatCode_text  = (null == casFeat_text) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_text).getCode();
 
  
-    casFeat_frequency = jcas.getRequiredFeatureDE(casType, "frequency", "uima.cas.Double", featOkTst);
+    casFeat_frequency = jcas.getRequiredFeatureDE(casType, "frequency", "uima.cas.Integer", featOkTst);
     casFeatCode_frequency  = (null == casFeat_frequency) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_frequency).getCode();
 
   }

@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Mon Oct 13 01:38:25 EDT 2014
+ * Updated by JCasGen Wed Oct 15 13:50:29 EDT 2014
  * XML source: /home/mac/workspace/11791/hw3-kangh/src/main/resources/descriptors/typesystems/VectorSpaceTypes.xml
  * @generated */
 public class Token extends Annotation {
@@ -94,19 +94,19 @@ public class Token extends Annotation {
    * @generated
    * @return value of the feature 
    */
-  public double getFrequency() {
+  public int getFrequency() {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequency == null)
       jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Token");
-    return jcasType.ll_cas.ll_getDoubleValue(addr, ((Token_Type)jcasType).casFeatCode_frequency);}
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_frequency);}
     
   /** setter for frequency - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setFrequency(double v) {
+  public void setFrequency(int v) {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequency == null)
       jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Token");
-    jcasType.ll_cas.ll_setDoubleValue(addr, ((Token_Type)jcasType).casFeatCode_frequency, v);}    
+    jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_frequency, v);}    
   }
 
     
