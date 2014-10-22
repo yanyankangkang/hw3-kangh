@@ -84,7 +84,7 @@ Yangtze is longest river in Asia in general and in China, in particular.
 is 1	Yangtze 1	Asia 1	China, 1	in 4	longest 1	particular. 1	general 1	and 1	river 1	
 5
 0
-Yellow river is often called the mother of China 
+Yellow river is often called   the mother of China 
 of 1	is 1	mother 1	often 1	called 1	Yellow 1	the 1	China 1	river 1	
 6
 99

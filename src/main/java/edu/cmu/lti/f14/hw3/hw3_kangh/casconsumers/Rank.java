@@ -7,7 +7,11 @@ import java.util.Map;
 
 import edu.cmu.lti.f14.hw3.hw3_kangh.casconsumers.Rank;
 
-
+/**
+ * @author KangHuang
+ * @version 1.0 Build on Oct 22, 2014.
+ * encapsulate all functions and variables used in similarity score calculations
+ */
 public class Rank implements Comparable<Rank>{
   private double cosine;
   private int relevance;
@@ -18,6 +22,12 @@ public class Rank implements Comparable<Rank>{
   public Rank(){
     
   }
+  /**
+   * (deprecated)
+   * @param c
+   * @param r
+   * @param t
+   */
   public Rank(double c, int r, String t){
     this.cosine = c;
     this.relevance = r;
@@ -31,7 +41,10 @@ public class Rank implements Comparable<Rank>{
   public int getRelevanceValue(){
     return relevance;
   }
-  
+  /**
+   * get original text of each document
+   * @return original document text
+   */
   public String getText(){
     return text;
   }
@@ -43,11 +56,18 @@ public class Rank implements Comparable<Rank>{
   public void setRelevanceValue(int r){
     this.relevance = r;
   }
-  
+  /**
+   *  store original text of each document
+   * @param original text
+   */
   public void setText(String t){
     this.text = t;
   }
   
+  /**
+   * implements interface of Comparable
+   * the first key is cosineSimilarity, the second key is relValue
+   */
   public int compareTo(Rank other) {
     if (this.getCosine() == other.getCosine()){
       if( other.getRelevanceValue() - this.getRelevanceValue() > 0){
@@ -83,16 +103,27 @@ public class Rank implements Comparable<Rank>{
     return rank;
   }
   
-  
+  /**
+   * all tokens are stored in one string 
+   * @param String 
+   */
   public void setTokenList(String t) {
     this.tokenList = t;
   }
-  
+  /**
+   * get all tokens in form of one string splitted by blank
+   * @return
+   */
   public String getTokenList() {
     return this.tokenList;
   }
-  
-  public static void naiveCosine(Rank r[], HashMap<String, Integer> queryVector) throws IOException {
+  /**
+   * calculate cosine similarity using term frequency as weight without any multipliers
+   * @param r all documents 
+   * @param queryVector build a query dictionary whose key word is words in query, and value is term frequency
+   *
+   */
+  public static void naiveCosine(Rank r[], HashMap<String, Integer> queryVector){
     for (int i = 0; i < r.length; i++) {
       HashMap<String, Integer> docVector = decompose(r[i].getTokenList());
       // compute the cosine similarity measure
@@ -103,7 +134,7 @@ public class Rank implements Comparable<Rank>{
     }
   }
   /**
-   * 
+   * calculate basic normalized cosine similarity 
    * @return cosine_similarity
    */
   private static double computeCosineSimilarity(Map<String, Integer> queryVector,
@@ -117,7 +148,11 @@ public class Rank implements Comparable<Rank>{
     }
     return cosine_similarity;
   }
-
+ /**
+  * calculate normalized weight vector
+  * @param vector unnormalized weight vector 
+  * @return normalized vector in form of HashMap
+  */
   private static double norm(Map<String, Integer> vector){
     double sum = 0;
     for (String word : vector.keySet()){
@@ -128,7 +163,7 @@ public class Rank implements Comparable<Rank>{
   }
   
   /**
-   * 
+   * calculate MRR by averaging ranks of rel=1 all documents.
    * @return mrr
    */
   public static double compute_Mrr(ArrayList<Rank> mrrList) {
@@ -140,9 +175,12 @@ public class Rank implements Comparable<Rank>{
     }
     return metric_mrr / length;
   }
-  /** return the word from .txt 
-   * @throws IOException **/
-  public static HashMap<String, Integer> decompose(String sentence) throws IOException{
+  /** transform  data structure of tokenList from String to HashMap
+   *  
+   *  @param String
+   *  @return HashMap
+   */
+  public static HashMap<String, Integer> decompose(String sentence){
     HashMap<String, Integer> vector = new HashMap<String, Integer>();
   //  System.out.println("!"+ sentence);
     String tokens[] = sentence.split("\\t");

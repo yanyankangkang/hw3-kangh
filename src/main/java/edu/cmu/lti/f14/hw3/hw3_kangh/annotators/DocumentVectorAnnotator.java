@@ -11,9 +11,17 @@ import org.apache.uima.jcas.tcas.Annotation;
 import edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Document;
 import edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Token;
 import edu.cmu.lti.f14.hw3.hw3_kangh.utils.Utils;
-
+/**
+ * 
+ * @author given by task1
+ *  
+ */
 public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
  
+  /**
+   *  read each document or query once.
+   * @param jcas store each document 
+   */
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
 
@@ -26,15 +34,15 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 		
 	}
 	/**
-	 * 
+	 * first tokenize words from each document, then count term fequency of each document(sentence)
 	 * @param jcas save all relevants information such as tf, word, tokenlist of one document 
-	 * @param doc
+	 * @param doc Type define in the typesystem
 	 */
 
 	private void createTermFreqVector(JCas jcas, Document doc) {
     
 		String docText = doc.getText();
-		//TO DO: construct a vector of tokens and update the tokenList in CAS
+		// construct a vector of tokens and update the tokenList in CAS
 		String[] tokens = tokenize0(docText);
 		HashMap <String, Integer> table = new HashMap <String, Integer> ();
 		ArrayList<Token> tokenList = new ArrayList<Token>();

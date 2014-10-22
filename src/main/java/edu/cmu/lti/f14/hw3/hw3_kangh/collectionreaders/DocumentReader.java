@@ -8,7 +8,11 @@ import org.apache.uima.jcas.JCas;
 
 import edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Document;
 
-
+/**
+ * 
+ * @author given by task1
+ *
+ */
 public class DocumentReader 
 extends JCasAnnotator_ImplBase  {
 	

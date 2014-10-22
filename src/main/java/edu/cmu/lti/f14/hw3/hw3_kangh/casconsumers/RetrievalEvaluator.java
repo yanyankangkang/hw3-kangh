@@ -31,26 +31,27 @@ import edu.cmu.lti.f14.hw3.hw3_kangh.casconsumers.Rank;
 import edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Document;
 import edu.cmu.lti.f14.hw3.hw3_kangh.typesystems.Token;
 import edu.cmu.lti.f14.hw3.hw3_kangh.utils.Utils;
-
+/**
+ * 
+ * @author mac
+ * @version 1.0 Build on Oct 22, 2014.
+ * Store processed data in persisting file outside UIMA framework during pipeline
+ * When process completed, reading all data from files to do a final calculation of MRR 
+ */
 public class RetrievalEvaluator extends CasConsumer_ImplBase {
-
-  /** query id number **/
-  // public ArrayList<Integer> qIdList;
-
-  /** query and text relevant values **/
-  // public ArrayList<Integer> relList;
-
-  /** number of documents relevant to queries including queries **/
+  /**
+   * count number of documents relavant to each query 
+   */
   public ArrayList<Integer> groupList;
-
+  /**
+   * file name of storing in intermediate file
+   */
   private static String outputPath = "src/main/resources/data/pd.txt";
 
-  // private BufferedWriter fWriter = null;
   private Writer fWriter = null;
 
   private BufferedReader fReader = null;
 
-  // Scanner fReader = null;
   private static int sQUERY = 99;
 
   private static int sIRREL = 0;
@@ -61,13 +62,8 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
 
   public void initialize() throws ResourceInitializationException {
 
-    // qIdList = new ArrayList<Integer>();
-
-    // relList = new ArrayList<Integer>();
 
     groupList = new ArrayList<Integer>();
-
-    // File outputFile = new File((String) getConfigParameterValue("outputPath"));
 
     id = -1;
     num = 0;
@@ -77,13 +73,13 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
     try {
       fWriter = new BufferedWriter(new FileWriter(outputFile));
     } catch (IOException e) {
-      // TODO Auto-generated catch block
+      //Auto-gvenerated catch block
       e.printStackTrace();
     }
   }
 
   /**
-   * TODO :: 1. construct the global word dictionary 2. keep the word frequency for each sentence
+   * 1. construct the global word dictionary 2. keep the word frequency for each sentence
    * 
    * using extra one grouplist to distinguish each query, record vectors and documents in a .txt
    * file, word and frequency in one sentence delimited by blank and each two by blank. and each
@@ -177,15 +173,15 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
     // Iterator<Integer> relIter = relList.listIterator();
     URL pdUrl = RetrievalEvaluator.class.getResource("/data/pd.txt");
     if (pdUrl == null) {
-      throw new IllegalArgumentException("Error opening data/documents.txt");
+      throw new IllegalArgumentException("Error opening data/pd.txt");
     }
     fReader = new BufferedReader(new InputStreamReader(pdUrl.openStream()));
     File outputFile = new File("src/main/resources/data/report.txt");
     fWriter = new BufferedWriter(new FileWriter(outputFile));
     // HashMap<Document, Token> queryVector = new HashMap<Document, Token>();
     // HashMap<Document, Token> docVector = new HashMap<Document, Token>();
-    File eaFile = new File("src/main/resources/data/errorAnalysis.txt");
-    BufferedWriter fw = new BufferedWriter(new FileWriter(eaFile));
+  //  File eaFile = new File("src/main/resources/data/errorAnalysis.txt");
+  //  BufferedWriter fw = new BufferedWriter(new FileWriter(eaFile));
     /** item to calculate MRR **/
     ArrayList<Rank> mrrList = new ArrayList<Rank>();
     for (Integer N : groupList) {
@@ -210,7 +206,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
       // compute the rank of retrieved sentences
       Arrays.sort(r);
       // System.out.println(r.length);
-      errorAnalysis(r, queryVector, fw);
+    //  errorAnalysis(r, queryVector, fw);
       
       for (int i = 0; i < r.length; i++) {
         // System.out.println(r[i].getRelevanceValue());
@@ -226,15 +222,15 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
         }
       }
     }
-    fw.close();
+   // fw.close();
     // compute the metric:: mean reciprocal rank
     double metric_mrr = Rank.compute_Mrr(mrrList);
     System.out.println(" (MRR) Mean Reciprocal Rank ::" + metric_mrr);
-    fWriter.write(" (MRR) Mean Reciprocal Rank ::" + String.format("%.4f", metric_mrr));
+    fWriter.write("MRR=" + String.format("%.4f", metric_mrr));
     fWriter.close();
   }
   
-  private void errorAnalysis(Rank r[], HashMap<String, Integer>query, BufferedWriter fw) throws IOException{
+  /*private void errorAnalysis(Rank r[], HashMap<String, Integer>query, BufferedWriter fw) throws IOException{
    
     fw.append("query" + r[0].getQueryID() + ":  ");
     for(String word : query.keySet()){
@@ -256,5 +252,5 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
     }
     fw.append("\n");
   }
-   
+   */
 }

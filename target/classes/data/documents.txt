@@ -19,7 +19,7 @@ qid=4	rel=0	Wilt Chamberlain most famous record is the 100 points he scored in t
 qid=5	rel=99	What river is called China's Sorrow?
 qid=5	rel=1	People of China have mixed feelings about  River, which they often call "sorrow of China"
 qid=5	rel=0	Yangtze is longest river in Asia in general and in China, in particular.
-qid=5	rel=0	Yellow river is often called the mother of China
+qid=5	rel=0	Yellow river is often called		 the mother of China
 qid=6	rel=99	Who was the first person to run the mile in less than four minutes
 qid=6	rel=1	Roger Bannister was the first to break the four-minute mile barrier.
 qid=6	rel=0	The claim that a 4-minute mile was once thought to be impossible byinformed observers was and is a widely propagated myth created by sportswriters and debunked by Bannister himself in his memoir, The Four Minute Mile (1955).
