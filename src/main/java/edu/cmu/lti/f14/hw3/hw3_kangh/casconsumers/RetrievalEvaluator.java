@@ -79,7 +79,7 @@ public class RetrievalEvaluator extends CasConsumer_ImplBase {
   }
 
   /**
-   * 1. construct the global word dictionary 2. keep the word frequency for each sentence
+   *    1. construct the global word dictionary 2. keep the word frequency for each sentence
    * 
    * using extra one grouplist to distinguish each query, record vectors and documents in a .txt
    * file, word and frequency in one sentence delimited by blank and each two by blank. and each
